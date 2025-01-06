@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Masque le curseur par défaut partout */
+* {
+    cursor: none !important; /* Masque le curseur sur tous les éléments */
+    position: relative; /* Permet d'appliquer le curseur personnalisé même sur les éléments */
+}
+
+/* Style pour le curseur personnalisé */
+#customCursor {
+    position: fixed; /* Reste à une position fixe */
+    width: 48px; /* Largeur du curseur */
+    height: 48px; /* Hauteur du curseur */
+    background: url('IMG/curseur-normal.cur') no-repeat center center; /* Image du curseur */
+    background-size: contain; /* Ajuste l'image à la taille */
+    pointer-events: none; /* Permet d'interagir avec les éléments sous le curseur */
+    z-index: 10000; /* Assure qu'il reste visible au-dessus des autres éléments */
+    display: none; /* Caché par défaut jusqu'à ce que la souris se déplace */
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    cursor: none; /* Cache le curseur par défaut */
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent; /* Fond transparent */
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: flex-end; /* Alignement à droite */
+    padding: 10px 20px; /* Espace pour éloigner du bord */
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding */
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: yellow;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 2px solid yellow;
+    border-radius: 20px; /* Bords arrondis */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid yellow; /* Cercle vide */
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.active .circle {
+    background-color: yellow; /* Cercle rempli quand actif */
+}
+
+.nav-link:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Styles pour les sections */
+section {
+    padding: 100px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    overflow: hidden;
+}
+
+.slideshow {
+    position: relative; /* Nécessaire pour le positionnement des images */
+    height: 100%; /* Assurez-vous que cela prend toute la hauteur */
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto; /* Ajuster les images pour garder le rapport d'aspect */
+    display: none; /* Cacher les images par défaut */
+}
+
+.slideshow img.active {
+    display: block; /* Afficher seulement l'image active */
+}
+
+.title {
+
+    position: absolute;
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+    color: yellow;
+    font-family: 'SchwarzKopf'; /* Utilisation de la police personnalisée */
+    font-size: 15rem; /* Taille du texte */
+    text-align: center;
+    animation: glitch 1s infinite; /* Animation de grésillement */
+    z-index: 20; /* Pour s'assurer que le texte est au-dessus des images */
+    @font-face {
+        font-family: 'SchwarzKopf';
+        src: url('SchwarzKopf.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+    
+        }        
+    }
+    
+
+/* Animation de grésillement */
+@keyframes glitch {
+    0% { transform: translate(-50%, -50%) skew(0deg); }
+    20% { transform: translate(-50%, -50%) skew(-2deg); }
+    40% { transform: translate(-50%, -50%) skew(2deg); }
+    60% { transform: translate(-50%, -50%) skew(-1deg); }
+    80% { transform: translate(-50%, -50%) skew(1deg); }
+    100% { transform: translate(-50%, -50%) skew(0deg); }
+}
+
+body {
+    margin: 0; /* Supprime les marges par défaut */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+#introContainer {
+    width: 100vw; /* Utilise la largeur de la fenêtre */
+    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden; /* Cache le texte qui dépasse de son conteneur */
+    position: relative; /* Nécessaire pour positionner le texte */
+    background-color: white; /* Ajoutez une couleur de fond si nécessaire */
+}
+
+#introText {
+    color: black; /* Couleur du texte en noir */
+    font-size: 50px; /* Ajustez la taille de la police selon vos besoins */
+    font-family: Coolvetica, sans-serif; /* Choisissez la police que vous préférez */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
+    position: absolute; /* Positionnement absolu pour l'animation */
+    animation: slide 100s linear infinite; /* Animation de défilement */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Commence à la droite de la fenêtre */
+    }
+    100% {
+        transform: translateX(-100%); /* Défile jusqu'à la gauche de la fenêtre */
+    }
+}
+
+/* Conteneur des blocs */
+/* Container des blocs */
+.blocks-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 250px; /* Marge sous le texte défilant */
+}
+
+/* Style pour chaque bloc */
+.block {
+    position: relative;
+    width: 30%;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.block-text {
+    position: absolute;
+    color: yellow;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.image-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+/* Film jaune */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(182, 182, 0, 0.9);  /* Jaune semi-transparent */
+    opacity: 0;  /* Caché par défaut */
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+  
+  /* Texte de survol */
+.text-overlay {
+    position: absolute;
+  top: 50%; /* Centrer verticalement */
+  left: 3px; /* Marges internes horizontales (3px de la gauche) */
+  transform: scale(0.82)translateY(-60%); /* Centrer verticalement le texte */
+  color: white;
+  font-family: 'JMH Typewriter'; /* Remplace par ta police */
+  font-size: 14px; /* Corps de texte plus petit */
+  font-weight: regular;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  padding: 5px 3px; /* Marges internes (5px en hauteur et 3px en largeur) */
+  box-sizing: border-box; /* Prend en compte les marges internes dans le calcul de la taille du bloc */
+  width: calc(100% - 6px); /* S'assure que le texte ne dépasse pas du bloc (avec les marges internes de 3px de chaque côté) */
+  word-wrap: break-word; /* Permet aux mots longs de se couper et s'adapter au bloc */
+  line-height: 1.4; /* Hauteur de ligne pour espacer les lignes de texte */
+  white-space: normal; /* Permet de passer à la ligne quand le texte atteint la limite du bloc */
+  overflow: hidden; /* Empêche le texte de dépasser du bloc */
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long (optionnel) */
+  height: calc(100% - 10px); /* Assure que le texte reste bien à l'intérieur du bloc, avec les marges de 5px */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+  }
+  .custom-break {
+    margin-bottom: 20px; /* Ajuste l'espace sous le saut de ligne */
+    display: block; /* Assure que le saut est traité comme un bloc */
+    line-height: 0; /* Empêche l'ajout d'espacement par défaut */
+}
+
+  
+  
+
+/* Texte de base dans le bloc (toujours visible) */
+.text-base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: yellow;
+    font-family: 'JMH Typewriter';
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 1;  /* Toujours visible */
+    transition: opacity 0.3s ease;
+}
+
+  
+.block:hover {
+    width: 100%;
+    height: 300px;
+}
+
+/* Effet overlay - Film jaune */
+.block:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 0, 0.5); /* Film jaune */
+    z-index: 2;
+  }
+
+.block:hover .image-slider {
+    transform: scale(1.2);
+}
+
+.block:hover .text-base {
+    opacity: 0;
+}
+
+.block:hover .overlay {
+    opacity: 1;  /* Afficher le film jaune */
+}
+
+.block:hover .text-overlay {
+    opacity: 1;  /* Afficher le texte */

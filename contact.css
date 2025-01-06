@@ -1,0 +1,166 @@
+/* General Reset */
+body, div, hr {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Fond noir */
+    color: yellow; /* Texte jaune */
+    font-family: 'JMH Typewriter', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligne tout en haut de la page */
+    min-height: 100vh;
+    margin: 0;
+    font-size: 2px;
+}
+
+/* Contact Container */
+.contact-container {
+    width: 100%; /* Utilisation de 100% de la largeur de la page */
+    max-width: 100%; /* Pour être encore plus proche des bords */
+    margin: 0; /* Pas de marge supplémentaire */
+    padding: 0 5px; /* Un léger padding pour ne pas coller complètement les bords */
+    color: yellow; /* Texte jaune */
+    flex-direction: column; /* Aligne les éléments verticalement */
+}
+
+/* Contact Item */
+.contact-item {
+    display: flex; /* Aligne le label et le lien sur la même ligne */
+    justify-content: space-between; /* Positionne le label à gauche et le lien à droite */
+    align-items: center; /* Aligne verticalement */
+    padding: 10px 0; /* Espacement entre chaque ligne */
+    text-align: left; /* Par défaut pour le label */
+    align-items: baseline; /* Aligne les éléments par la première lettre (ligne de base) */
+}
+
+/* Contact Label */
+.contact-label {
+    font-size: 1rem; /* Taille de texte pour le label */
+    flex-basis: 50%; /* Occupe 50% de la largeur */
+}
+
+/* Contact Link */
+.contact-link {
+    font-size: 1rem; /* Taille de texte pour le lien */
+    flex-basis: 50%; /* Occupe 50% de la largeur */
+    text-align: right; /* Aligne le texte à droite */
+    text-decoration: none; /* Supprime le soulignement */
+    color: #ff0; /* Texte jaune par défaut */
+    transition: color 0.3s ease; /* Animation de survol fluide */
+}
+
+.contact-link:hover {
+    color: #fff; /* Blanc au survol */
+}
+
+/* Horizontal Line */
+hr {
+    border: none;
+    border-top: 1px solid #444; /* Ligne grise fine */
+    margin: 0; /* Supprime les marges */
+}
+
+/* Ajoute une petite marge interne pour le container */
+.contact-container {
+    padding: 0 px; /* Marge de 5px à gauche et à droite pour ne pas être collé aux bords */
+}
+
+/* Pour petits écrans (responsive design) */
+@media (max-width: 600px) {
+    .contact-item {
+        flex-direction: column; /* Passe en disposition verticale pour les petits écrans */
+        align-items: flex-start; /* Alignement des éléments à gauche */
+    }
+
+    .contact-link {
+        text-align: left; /* Les liens seront alignés à gauche sur petits écrans */
+        margin-top: 5px; /* Un petit écart entre le label et le lien */
+        display: flex; /* Utilisation du flex pour aligner label et lien */
+        align-items: baseline; /* Aligne les éléments sur la ligne de base de la première lettre */
+    }
+
+    .contact-label {
+        font-size: 0.9rem; /* Légèrement plus petit sur les petits écrans */
+    }
+}
+
+/* Pour les grands écrans */
+@media (min-width: 1024px) {
+    .contact-container {
+        padding: 0 5; /* Supprime toute marge interne pour les grands écrans */
+    }
+
+    .contact-item {
+        padding: 20px 0; /* Augmente l'espacement pour les grands écrans */
+    }
+
+    .contact-link {
+        font-size: 18px; /* Augmente légèrement la taille du texte des liens pour les grands écrans */
+        display: flex; /* Utilisation du flex pour aligner label et lien */
+        align-items: baseline; /* Aligne les éléments sur la ligne de base de la première lettre */
+        padding-left: 950px; /* Ajoute un petit espace à droite du lien */
+    }
+
+    .contact-label {
+        font-size: 20px; /* Augmente la taille du texte des labels pour les grands écrans */
+    }
+}
+
+header {
+    position: fixed;
+    bottom: 200px;
+    width: 100%;
+    background: transparent; /* Fond transparent */
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: center; /* Alignement à droite */
+    padding: 10px 20px; /* Espace pour éloigner du bord */
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding */
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: yellow;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 2px solid yellow;
+    border-radius: 20px; /* Bords arrondis */
+    transition: background-color 0.3s, color 0.3s;
+    font-family: JMH Typewriter; /* Police personnalisée */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid yellow; /* Cercle vide */
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.active .circle {
+    background-color: yellow; /* Cercle rempli quand actif */
+}
+
+.nav-link:hover {
+    background-color: yellow;
+    color: black;
+}
