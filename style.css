@@ -57,13 +57,14 @@ nav li {
 .nav-link {
     color: yellow;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     padding: 5px 10px;
     border: 2px solid yellow;
     border-radius: 20px; /* Bords arrondis */
     transition: background-color 0.3s, color 0.3s;
+    font-family: JMH Typewriter; /* Police personnalisée */
 }
 
 .circle {
@@ -155,44 +156,49 @@ body {
 }
 
 #introContainer {
-    width: 100vw; /* Utilise la largeur de la fenêtre */
-    height: 50px; /* Ajustez la hauteur selon vos besoins */
-    overflow: hidden; /* Cache le texte qui dépasse de son conteneur */
-    position: relative; /* Nécessaire pour positionner le texte */
-    background-color: white; /* Ajoutez une couleur de fond si nécessaire */
+    margin: 0 auto; /* Centrage horizontal */
+    width: 100%; /* Utilise toute la largeur disponible */
+    height: 50px; /* Hauteur du conteneur */
+    overflow: hidden; /* Cache tout dépassement */
+    position: relative; /* Position relative pour suivre le flux normal de la page */
+    background-color: white; /* Couleur de fond (modifiable si nécessaire) */
+    z-index: 1; /* S'assurer qu'il soit visible */
+    margin-bottom: 20px; /* Espacement avec la section "À propos" */
 }
 
 #introText {
-    color: black; /* Couleur du texte en noir */
-    font-size: 50px; /* Ajustez la taille de la police selon vos besoins */
-    font-family: Coolvetica, sans-serif; /* Choisissez la police que vous préférez */
-    white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
-    position: absolute; /* Positionnement absolu pour l'animation */
-    animation: slide 100s linear infinite; /* Animation de défilement */
+    color: black; /* Couleur du texte */
+    font-size: 50px; /* Taille de la police */
+    font-family: Coolvetica, sans-serif; /* Police choisie */
+    white-space: nowrap; /* Empêche le passage à la ligne */
+    position: absolute; /* Positionnement nécessaire pour l'animation */
+    animation: slide 60s linear infinite; /* Animation de défilement */
+    opacity: 1;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    transition: none;
 }
 
 @keyframes slide {
-    0% {
-        transform: translateX(100%); /* Commence à la droite de la fenêtre */
+    0% { transform: translateX(100%); /* Commence à la droite de la fenêtre */
     }
     100% {
         transform: translateX(-100%); /* Défile jusqu'à la gauche de la fenêtre */
     }
 }
 
-/* Conteneur des blocs */
 /* Container des blocs */
-.blocks-container {
+a.blocks-container {
     display: flex;
     justify-content: space-between;
     gap: 5px;
-    margin-top: 250px; /* Marge sous le texte défilant */
+    margin-top: 0px; /* Marge sous le texte défilant */
 }
 
 /* Style pour chaque bloc */
 .block {
     position: relative;
-    width: 30%;
+    width: 300%;
     height: 200px;
     overflow: hidden;
     border: 2px solid black;
@@ -323,3 +329,30 @@ body {
 
 .block:hover .text-overlay {
     opacity: 1;  /* Afficher le texte */
+}
+
+#apropos {
+    width: 80%; /* Réduit la largeur pour centrer */
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    padding: 20px; /* Espace intérieur */
+    margin: 50px auto; /* Centre horizontalement et ajoute une marge en haut */
+    text-align: center; /* Centre le texte */
+    position: relative; /* Permet un placement plus précis */
+    bottom: -50px; /* Pousse l'encadré vers le bas */
+    border-radius: 10px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Ajoute une ombre douce */
+    font-family: 'JMH Typewriter', sans-serif; /* Applique une belle typographie */
+}
+
+#apropos h2 {
+    font-size: 20px; /* Taille du titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    text-transform: uppercase; /* Met en majuscules */
+}
+
+#apropos p {
+    font-size: 10px; /* Taille du texte */
+    line-height: 1.5; /* Espacement entre les lignes */
+}
+
