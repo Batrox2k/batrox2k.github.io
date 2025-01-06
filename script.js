@@ -50,28 +50,52 @@ interactiveElements.forEach(el => {
     });
 });
 
-const introText = document.getElementById("introText");
-const text = introText.innerHTML;
-introText.setAttribute('data-text', text); // Crée un attribut pour le texte répété
+
 
 document.querySelectorAll('.image-wrapper').forEach(block => {
     block.addEventListener('mouseover', function() {
-        const previewUrl = this.getAttribute('data-preview-url');
-        let previewOverlay = this.querySelector('.preview-overlay');
+        const carousel = this.querySelector('.carousel-container');
+        // Commence le défilement des images
+        carousel.style.animation = 'scroll-images 15s linear infinite';
+    });
 
-        // Crée l'overlay de prévisualisation s'il n'existe pas
-        if (!previewOverlay) {
-            previewOverlay = document.createElement('div');
-            previewOverlay.classList.add('preview-overlay');
-            
-            const iframe = document.createElement('iframe');
-            iframe.src = previewUrl;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
-            previewOverlay.appendChild(iframe);
-
-            this.appendChild(previewOverlay);
-        }
+    block.addEventListener('mouseleave', function() {
+        const carousel = this.querySelector('.carousel-container');
+        // Arrête le défilement des images lorsque la souris quitte
+        carousel.style.animation = 'none';
     });
 });
+
+// Fonction pour démarrer le défilement d'images dans chaque bloc
+function startImageSlider(sliderId) {
+    let currentIndex = 0;
+    const slider = document.getElementById(sliderId);
+    const images = slider.querySelectorAll('.image-slide');
+
+    function showNextImage() {
+        // Masquer l'image actuelle
+        images[currentIndex].style.display = "none"; // Cache l'image actuelle
+
+        // Passer à l'image suivante
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Afficher la nouvelle image
+        images[currentIndex].style.display = "block"; // Affiche la nouvelle image
+    }
+
+    // Afficher la première image
+    images[currentIndex].style.display = "block";
+
+    // Démarrer le défilement toutes les 3 secondes (3000 ms)
+    setInterval(showNextImage, 1000);
+}
+
+// Démarrer le défilement pour chaque bloc
+startImageSlider('block-editions');
+startImageSlider('block-affiches');
+startImageSlider('block-volumes');
+startImageSlider('block-autres');
+
+
+
+
