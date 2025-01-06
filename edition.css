@@ -1,0 +1,121 @@
+body {
+    background-color: #000;
+    color: yellow;
+    font-family: 'JMH Typewriter', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-size: 15px;
+}
+
+.project-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    color: #ff0;
+    cursor: pointer;
+    position: relative;
+}
+
+.project-name {
+    flex: 2;
+    text-align: left;
+}
+
+.project-material {
+    flex: 1;
+    text-align: center;
+}
+
+.project-date {
+    flex: 1;
+    text-align: right;
+}
+
+.hidden-images {
+    display: none; /* Cache les images par défaut */
+}
+
+#hover-popup {
+    position: absolute;
+    display: none;
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #fff;
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+#hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+footer {
+    position: fixed;
+    bottom: 200px;
+    width: 100%;
+    background: transparent; /* Fond transparent */
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: center; /* Alignement à droite */
+    padding: 10px 20px; /* Espace pour éloigner du bord */
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding */
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: yellow;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 2px solid yellow;
+    border-radius: 20px; /* Bords arrondis */
+    transition: background-color 0.3s, color 0.3s;
+    font-family: JMH Typewriter; /* Police personnalisée */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid yellow; /* Cercle vide */
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.active .circle {
+    background-color: yellow; /* Cercle rempli quand actif */
+}
+
+.nav-link:hover {
+    background-color: yellow;
+    color: black;
+}
