@@ -1,0 +1,190 @@
+/* Fond de la page */
+body {
+    background-color: #000; /* Fond noir */
+    color: yellow; /* Texte jaune */
+    font-family: 'JMH Typewriter', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Gère correctement les marges et paddings */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: yellow;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: JMH Typewriter;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid yellow;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.active .circle {
+    background-color: yellow;
+}
+
+.nav-link:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Conteneur principal */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px; /* Réduit la marge entre la grande image et les petites */
+    width: 100%;
+    height: 70vh; /* Hauteur légèrement ajustée */
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Flèches */
+.arrow {
+    color: yellow;
+    font-size: 3rem;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+/* Zone des images */
+.gallery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px; /* Mêmes marges entre les images */
+    width: 100%;
+    height: 100%;
+}
+
+/* Grosse image */
+.large-image {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.large-image img {
+    width: auto;
+    height: 100%; /* Grande image occupe toute la hauteur */
+    object-fit: contain;
+    border: 2px solid #fff;
+}
+
+/* Petites images */
+.small-images {
+    flex: 1.1; /* Ajuste la largeur relative */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espace entre les petites images */
+    height: 100%; /* S'étend sur la même hauteur que la grande image */
+    justify-content: space-between; /* Répartit les images également */
+    align-self: center;
+}
+
+.small-image {
+    width: 100%; /* Largeur maximale */
+    height: calc((100% - 10px) / 3); /* 3 images + 2 marges de 5px */
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+/* Liste d'informations */
+.project-details {
+    margin: 20px;
+    text-align: left;
+    width: 80%;
+    max-width: 800px;
+}
+
+.project-details h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.project-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-details li {
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+#apropos {
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    bottom: -50px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: 'JMH Typewriter', sans-serif;
+}
+
+#apropos h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#apropos p {
+    font-size: 10px;
+    line-height: 1.5;
+}

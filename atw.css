@@ -1,0 +1,194 @@
+/* Fond de la page */
+body {
+    background-color: #000; /* Fond noir */
+    color: yellow; /* Texte jaune */
+    font-family: 'JMH Typewriter', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box; /* Gère correctement les marges et paddings */
+  }
+      
+      body {
+        overflow-x: hidden;
+        margin: 0; /* Supprime les marges externes */
+      }
+      
+
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent; /* Fond transparent */
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: flex-end; /* Alignement à droite */
+    padding: 10px 20px; /* Espace pour éloigner du bord */
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding */
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+    color: yellow;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 2px solid yellow;
+    border-radius: 20px; /* Bords arrondis */
+    transition: background-color 0.3s, color 0.3s;
+    font-family: JMH Typewriter; /* Police personnalisée */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid yellow; /* Cercle vide */
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.active .circle {
+    background-color: yellow; /* Cercle rempli quand actif */
+}
+
+.nav-link:hover {
+    background-color: yellow;
+    color: black;
+}
+  
+  /* Conteneur principal */
+  .gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    width: 100%;
+    height: 70vh; /* Hauteur des images */
+    max-width: 1200px;
+    position: relative;
+  }
+  
+  /* Flèches */
+  .arrow {
+    color: yellow;
+    font-size: 3rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Zone des images */
+  .gallery {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Grosse image */
+  .large-image {
+    flex: 2;
+    height: 100%;
+  }
+  
+  .large-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir sans déformer */
+    border: 2px solid #fff;
+  }
+  
+  /* Petites images (verticalement alignées) */
+  .small-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
+  
+  .small-image {
+    width: 100%;
+    height: calc(33.33% - 10px); /* Division égale */
+    object-fit: cover; /* Remplir sans déformer */
+    border: 2px solid #fff;
+  }
+  
+  /* Liste d'informations */
+  .project-details {
+    margin: 20px;
+    text-align: left;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .project-details h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .project-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .project-details li {
+    margin: 5px 0;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 20px;
+    font-size: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+
+  #apropos {
+    width: 80%; /* Réduit la largeur pour centrer */
+    background-color: rgb(255, 255, 255); /* Fond noir */
+    color: rgb(0, 0, 0); /* Texte blanc */
+    padding: 20px; /* Espace intérieur */
+    margin: 50px auto; /* Centre horizontalement et ajoute une marge en haut */
+    text-align: center; /* Centre le texte */
+    position: relative; /* Permet un placement plus précis */
+    bottom: -50px; /* Pousse l'encadré vers le bas */
+    border-radius: 10px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Ajoute une ombre douce */
+    font-family: 'JMH Typewriter', sans-serif; /* Applique une belle typographie */
+    margin-top: 1px;
+}
+
+#apropos h2 {
+    font-size: 20px; /* Taille du titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    text-transform: uppercase; /* Met en majuscules */
+}
+
+#apropos p {
+    font-size: 10px; /* Taille du texte */
+    line-height: 1.5; /* Espacement entre les lignes */
+}
